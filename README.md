@@ -1,4 +1,4 @@
-# Conhe�a seu vereador
+# Conheça seu vereador
 
 Desafio de Dados Abertos da Câmara Municipal de São Paulo
 
