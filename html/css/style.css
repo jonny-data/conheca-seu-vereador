@@ -1,0 +1,21 @@
+.no-underline a {
+	text-decoration: none;
+	
+}
+
+div.subnav {
+	height: 50px;
+}
+
+div.subnav .form-search {
+	margin: 15px 30px 0 10px; 
+}
+
+.nav-tabs > li > a, .nav-pills > li > a {
+	line-height: 28px;
+}
+
+.navbar .nav > li > a.gold {
+	color: #ff751a;
+	font-weight: bold;
+}
