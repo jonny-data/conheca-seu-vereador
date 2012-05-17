@@ -3,10 +3,12 @@
 namespace Engine;
 
 class AldermanDocument {
+	protected $url;
 	protected $document;
 	protected $path;
 
-	public function __construct($html) {
+	public function __construct($url, $html) {
+		$this->url = $url;
 		libxml_use_internal_errors(true);
 		$this->document = \DomDocument::loadHTML($html);
 		$this->path = new \DOMXPath($this->document);
@@ -41,7 +43,7 @@ class AldermanDocument {
 	}
 
 	public function avatar() {
-		return $this->avatarNode()->getAttribute('src');
+		return $this->url($this->avatarNode()->getAttribute('src'));
 	}
 
 	protected function nameNode() {
@@ -101,5 +103,12 @@ class AldermanDocument {
 			$result[] = $content;
 		}
 		return implode("\n", $result);
+	}
+
+	protected function url($url) {
+		if ($url[0] !== '/') {
+			return dirname($this->url) . '/' . $url;
+		}
+		return $url;
 	}
 }
