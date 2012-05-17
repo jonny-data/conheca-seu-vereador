@@ -12,7 +12,7 @@ Integrantes:
 * Rodrigo Moyle
 * Willian Moraes
 
-## Id�ia
+## Idéia
 
 Foco na entrega de dados ao usuário, dispensando a necessidade de busca pela informação.
 
