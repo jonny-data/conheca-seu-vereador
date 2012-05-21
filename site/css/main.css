@@ -1,0 +1,89 @@
+@import url("http://fonts.googleapis.com/css?family=Andada");
+@import url("reset.css");
+
+body {
+	font: 14px Andada, serif;
+}
+h1, h2, h3, h4, h5, h6 { margin-bottom: 20px; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.3em; margin-bottom: 10px; }
+.box-gray {
+	background: #efefef;
+	border-style: solid;
+	border-color: #a2a2a2;
+}
+
+
+#header {
+	height: 275px;
+	background: url('../images/fundo1.jpg') no-repeat center top;
+	margin-bottom: 20px;
+}
+#header .content { position: relative; height: 100%; }
+#illustra { position: absolute; right: 0; bottom: -30px; }
+
+#content {
+	min-height: 400px;
+	margin-bottom: 30px;
+}
+#content h2 { text-indent: 30px; background: url('../images/sprite-ico-title.jpg') no-repeat left top; }
+#content h2.second { background-position: left -120px; }
+#content h2.third { background-position: left -240px; }
+#content p {
+	margin-left: 30px;
+}
+
+#sidebar {
+	width: 300px;
+	padding: 20px;
+	border-width: 0 0 1px 1px;
+	margin: 60px 0 0 2em;
+}
+#footer {
+	height: 175px;
+	background: #efefef;
+	border-width: 1px 0 0 0;
+	padding: 10px 0 15px;
+}
+
+/* media queries */
+@media only screen and (max-width: 960px){
+	.content { padding: 0 2em; }
+	#content p { margin-left: 0; }
+}
+@media only screen and (max-width: 800px){
+	#header { background-size: 250%;}
+	
+	#illustra { right: 10px; }
+	#sidebar { width: 40%; margin: 0; }
+	#footer { height: auto; }
+	#footer section { float: none; margin-bottom: 15px; }
+	iframe { display: none; }
+}
+@media only screen and (max-width: 700px){
+	#header { margin: 0 0 10px 0; height: 200px; }
+	#illustra { width: 120px; height: auto !important; bottom: auto; top: 0; }
+	#sidebar { float: none; width: auto; margin-bottom: 10px; }
+	#footer { overflow: hidden; }
+}
+@media only screen and (max-width: 650px){
+	body { font-size: 12px; }
+	h2 { font-size: 1.4em; margin-bottom: 0.5em; }
+	
+	#content h2 { background-size: 20px auto; text-indent: 22px; }
+	#content h2.second { background-position: left -81px; }
+	#content h2.third { background-position: left -162px; }
+	
+	.content  { padding: 0 1em; }
+	#illustra { width: 110px; }
+	#footer { font-size: 10px; }
+	#footer h3 { font-size: 12px; margin-bottom: 5px;}
+}
+@media only screen and (max-width: 400px){
+	#header { height: 150px; }
+	#illustra { width: 90px; }
+}
+@media only screen and (max-width: 320px){
+	#header { height: 140px; }
+	#illustra { width: 80px; }
+}
