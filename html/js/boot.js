@@ -34,3 +34,10 @@ $('.dropdown').dropdown();
 })
 
 }(window.jQuery)
+
+
+for(i=0; i<10;i++) {
+	$box = $('.box-vereador').html();
+	console.log($box);
+	$('.container-fluid').append('<div class="box-vereador well">' + $box + '</div>');
+}
