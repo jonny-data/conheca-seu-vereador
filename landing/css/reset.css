@@ -1,0 +1,23 @@
+* { margin: 0; padding: 0; list-style: none; border: none; }
+
+html, body { height: 100%; }
+body,
+input, select, textarea { font-size: 14px; font-family: Tahoma, sans-serif; color: #333; }
+
+body { min-width: 300px; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+a { text-decoration: none; color: #4b4d4d; }
+a:hover { text-decoration: underline; }
+p { margin-bottom: 15px; line-height: 1.4em; }
+
+.content { width: 960px; margin: 0 auto; }
+.fleft { float: left; }
+.fright { float: right; }
+.clear { clear: both; }
+
+@media only screen and (max-width: 960px){
+	.content { width: auto; }
+	img { max-width: 100% !important; height: auto !important; }
+}
