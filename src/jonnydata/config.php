@@ -8,14 +8,15 @@ namespace jonnydata;
 //configuração do include_path
 ini_set('include_path', implode(PATH_SEPARATOR, array_unique(
 	array_merge(
-		array(realpath(dirname(__FILE__).'/../..')),
+		array(realpath(dirname(__FILE__) . '/..')),
 		explode(PATH_SEPARATOR, ini_get('include_path'))
 	)
 )));
 
 //registra a função autoload
 spl_autoload_register(function($class) {
-	$classPath = implode(DIRECTORY_SEPARATOR,explode('\\',$class)).'.php';
-	
-	require $classPath;
+	$classPath = implode(DIRECTORY_SEPARATOR,explode('\\', $class)).'.php';
+	if (file_exists($classPath)) {
+		require $classPath;
+	}
 },true);

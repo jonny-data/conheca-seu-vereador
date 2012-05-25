@@ -6,6 +6,7 @@
 namespace jonnydata\csv\data\dal\mongo;
 
 use jonnydata\csv\data\dal\BillDataAccess;
+use jonnydata\csv\data\Bill;
 
 class MongoDBBillDataAccess extends BillDataAccess {
     
@@ -52,20 +53,17 @@ class MongoDBBillDataAccess extends BillDataAccess {
 	 */
 	public function save(Bill $bill) {
 		return $this->mongo->collection->save($bill);
-		
 	}
 
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.BillDataAccess::update()
 	 */
 	public function update(Bill $bill, array $criteria) {
-        $multiple = true;
-        $upsert = false;
-        $options = array("multiple" => $multiple, "upsert" => $upsert);
+		$multiple = true;
+		$upsert = false;
+		$options = array("multiple" => $multiple, "upsert" => $upsert);
 		$result = $this->mongo->collection->save($criteria, $bill, $options);
-        
+
 		//return $bill
 	}
-
-
 }

@@ -9,11 +9,10 @@ use jonnydata\csv\data\ElectoralCoalition;
 use jonnydata\csv\data\dal\ElectoralCoalitionDataAccess;
 
 class MongoDBElectoralCoalitionDataAccess extends ElectoralCoalitionDataAccess {
-    
-    public function __construct(MongoDBConnection $mongo) {
-        $this->mongo = $mongo;
-    }
-    
+	public function __construct(MongoDBConnection $mongo) {
+		$this->mongo = $mongo;
+	}
+
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.ElectoralCoalitionDataAccess::find()
 	 */
@@ -52,21 +51,21 @@ class MongoDBElectoralCoalitionDataAccess extends ElectoralCoalitionDataAccess {
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.BillDataAccess::save()
 	 */
-	public function save(Bill $bill) {
+	public function save(ElectoralCoalition $electoralCoalition) {
 		// TODO Auto-generated method stub
-		return $this->mongo->collection->save($bill);
+		return $this->mongo->collection->save($electoralCoalition);
 		
 	}
 
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.BillDataAccess::update()
 	 */
-	public function update(Bill $bill, array $criteria) {
+	public function update(ElectoralCoalition $electoralCoalition,
+									array $criteria) {
 		// TODO Auto-generated method stub
-        $multiple = true;
-        $upsert = false;
-        $options = array("multiple" => $multiple, "upsert" => $upsert);
+		$multiple = true;
+		$upsert = false;
+		$options = array("multiple" => $multiple, "upsert" => $upsert);
 		return $this->mongo->collection->save($criteria, $bill, $options);
-		
 	}
 }

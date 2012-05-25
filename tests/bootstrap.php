@@ -21,3 +21,5 @@ spl_autoload_register(
         }
     }
 );
+
+include '../src/jonnydata/config.php';

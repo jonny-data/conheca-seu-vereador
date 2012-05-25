@@ -52,16 +52,17 @@ class MongoDBPoliticalOrganizationDataAccess extends PoliticalOrganizationDataAc
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.BillDataAccess::save()
 	 */
-	public function save(Bill $bill) {
+	public function save(PoliticalOrganization $politicalOrganization) {
 		// TODO Auto-generated method stub
-		return $this->mongo->collection->save($bill);
+		return $this->mongo->collection->save($politicalOrganization);
 		
 	}
 
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.BillDataAccess::update()
 	 */
-	public function update(Bill $bill, array $criteria) {
+	public function update(PoliticalOrganization $politicalOrganization,
+									array $criteria) {
 		// TODO Auto-generated method stub
         $multiple = true;
         $upsert = false;

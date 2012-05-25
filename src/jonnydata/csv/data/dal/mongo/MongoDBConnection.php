@@ -8,11 +8,10 @@ namespace jonnydata\csv\data\dal\mongo;
 
 use \Mongo;
 
-class MongoDBConnection{
-	public function __construct($db = 'conhecaseupolitico', $collection = 'user'){
+class MongoDBConnection {
+	public function __construct($db = 'conhecaseupolitico', $collection = 'user') {
 		$this->connection = new Mongo();
 		$this->db = $db;
-		$this->collection = $collection;
+		$this->collection = $this->connection->selectCollection($this->db, $collection);
 	}
 }
-?>
