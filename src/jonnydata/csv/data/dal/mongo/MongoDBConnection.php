@@ -3,7 +3,6 @@
  * Objetos de acesso a dados em base MongoDB do projeto Conheça seu Vereador
  * @package jonnydata\csv\data\dal\mongo
  */
-
 namespace jonnydata\csv\data\dal\mongo;
 
 use \Mongo;
