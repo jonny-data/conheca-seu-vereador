@@ -4,7 +4,9 @@
  * @package jonnydata\csv\data\dal\mongo
  */
 
-namespace jonnydata\csv\data\dal\mongo;
+namespace tests\jonnydata\csv\data\dal\mongo;
+
+use jonnydata\csv\data\dal\mongo\MongoDBPoliticianDataAccess;
 
 class MongoDBPoliticianDataAccessTest extends \PHPUnit_Framework_TestCase {
 	public $subject;

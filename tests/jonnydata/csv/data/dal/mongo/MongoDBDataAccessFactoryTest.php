@@ -1,6 +1,7 @@
 <?php 
+namespace tests\jonnydata\csv\data\dal\mongo;
 
-namespace jonnydata\csv\data\dal\mongo;
+use jonnydata\csv\data\dal\mongo\MongoDBDataAccessFactory;
 
 class MongoDBDataAccessFactoryTest extends \PHPUnit_Framework_TestCase {
 	public $subject = null;

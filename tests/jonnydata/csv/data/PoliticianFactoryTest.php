@@ -1,5 +1,7 @@
 <?php
-namespace jonnydata\csv\data;
+namespace tests\jonnydata\csv\data;
+
+use jonnydata\csv\data\PoliticianFactory;
 
 class PoliticianFactoryTest extends \PHPUnit_Framework_TestCase {
 	public function test_fromJSON() {
