@@ -15,7 +15,7 @@ class PoliticianFactory {
 		return $result;
 	}
 
-	public function fromJSONCollection($collection) {
+	public static function fromJSONCollection($collection) {
 		$result = array();
 		foreach ($collection as $item) {
 			$result[] = self::fromJSON($item);
