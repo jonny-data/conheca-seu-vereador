@@ -5,9 +5,8 @@
  */
 namespace jonnydata\csv\data\dal\mongo;
 
-use jonnydata\csv\data\dal\MongoDBConnection;
+use jonnydata\csv\data\dal\mongo\MongoDBConnection;
 use jonnydata\csv\data\dal\AbstractDataAccessFactory;
-
 /**
  * Fábrica de objetos de acesso a dados em base MongoDB.
  */
@@ -53,3 +52,6 @@ class MongoDBDataAccessFactory extends AbstractDataAccessFactory {
 		return new MongoDBSessionDataAccess($this->mongo);
 	}
 }
+
+$mongo = new MongoDBDataAccessFactory();
+var_dump($mongo->createPoliticianDataAccess());

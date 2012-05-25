@@ -12,7 +12,7 @@ use jonnydata\csv\data\Politician;
  */
 abstract class PoliticianDataAccess {
 	/**
-	 * Encontra as políticos segundo um critério.
+	 * Encontra os políticos segundo um critério.
 	 * @param array $criteria
 	 * @return array[Politician]
 	 */

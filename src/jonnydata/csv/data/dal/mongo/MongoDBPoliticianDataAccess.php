@@ -7,6 +7,8 @@ namespace jonnydata\csv\data\dal\mongo;
 
 use jonnydata\csv\data\Politician;
 use jonnydata\csv\data\dal\PoliticianDataAccess;
+use jonnydata\csv\data\dal\mongo\MongoDBConnection;
+
 
 class MongoDBPoliticianDataAccess extends PoliticianDataAccess {
     
@@ -18,55 +20,49 @@ class MongoDBPoliticianDataAccess extends PoliticianDataAccess {
 	 * @see jonnydata\csv\data\dal.PoliticianDataAccess::find()
 	 */
 	public function find(array $criteria) {
-		// TODO Auto-generated method stub
 		return $this->mongo->collection->find($criteria);
 	}
 
 	/* (non-PHPdoc)
-	 * @see jonnydata\csv\data\dal.BillDataAccess::findAll()
+	 * @see jonnydata\csv\data\dal.PoliticianDataAccess::findAll()
 	 */
 	public function findAll() {
-		// TODO Auto-generated method stub
 		return $this->mongo->collection->find();
 		
 	}
 
 	/* (non-PHPdoc)
-	 * @see jonnydata\csv\data\dal.BillDataAccess::findOne()
+	 * @see jonnydata\csv\data\dal.PoliticianDataAccess::findOne()
 	 */
 	public function findOne(array $criteria) {
-		// TODO Auto-generated method stub
 		return $this->mongo->collection->findOne($criteria);
 		
 	}
 
 	/* (non-PHPdoc)
-	 * @see jonnydata\csv\data\dal.BillDataAccess::remove()
+	 * @see jonnydata\csv\data\dal.PoliticianDataAccess::remove()
 	 */
 	public function remove(array $criteria) {
-		// TODO Auto-generated method stub
 		return $this->mongo->collection->remove($criteria, true);
 		
 	}
 
 	/* (non-PHPdoc)
-	 * @see jonnydata\csv\data\dal.BillDataAccess::save()
+	 * @see jonnydata\csv\data\dal.PoliticianDataAccess::save()
 	 */
-	public function save(Bill $bill) {
-		// TODO Auto-generated method stub
-		return $this->mongo->collection->save($bill);
+	public function save(Politician $politician) {
+		$this->mongo->collection->save($politician);
 		
 	}
 
 	/* (non-PHPdoc)
-	 * @see jonnydata\csv\data\dal.BillDataAccess::update()
+	 * @see jonnydata\csv\data\dal.PoliticianDataAccess::update()
 	 */
-	public function update(Bill $bill, array $criteria) {
-		// TODO Auto-generated method stub
+	public function update(Politician $politician, array $criteria) {
         $multiple = true;
         $upsert = false;
         $options = array("multiple" => $multiple, "upsert" => $upsert);
-		return $this->mongo->collection->save($criteria, $bill, $options);
+		return $this->mongo->collection->save($criteria, $politician, $options);
 		
 	}
 }

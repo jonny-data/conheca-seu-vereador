@@ -17,7 +17,10 @@ class MongoDBBillDataAccess extends BillDataAccess {
 	 * @see jonnydata\csv\data\dal.BillDataAccess::find()
 	 */
 	public function find(array $criteria) {
-		return $this->mongo->collection->find($criteria);
+        $result = $this->mongo->collection->find($criteria);
+        
+        //retornar array de Bills
+		//return ;
 	}
 
 	/* (non-PHPdoc)
@@ -59,8 +62,9 @@ class MongoDBBillDataAccess extends BillDataAccess {
         $multiple = true;
         $upsert = false;
         $options = array("multiple" => $multiple, "upsert" => $upsert);
-		return $this->mongo->collection->save($criteria, $bill, $options);
-		
+		$result = $this->mongo->collection->save($criteria, $bill, $options);
+        
+		//return $bill
 	}
 
 
