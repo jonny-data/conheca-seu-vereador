@@ -5,6 +5,7 @@
  */
 namespace jonnydata\csv\data\dal\mongo;
 
+use jonnydata\csv\data\dal\MongoDBConnection;
 use jonnydata\csv\data\dal\AbstractDataAccessFactory;
 
 /**
@@ -14,35 +15,35 @@ class MongoDBDataAccessFactory extends AbstractDataAccessFactory {
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.AbstractDataAccessFactory::createBillDataAccess()
 	 */
-	public function createBillDataAccess() {
-		return new MongoDBBillDataAccess();
+	public function createBillDataAccess(MongoDBConnection $mongo) {
+		return new MongoDBBillDataAccess($mongo);
 	}
 
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.AbstractDataAccessFactory::createElectoralCoalitionDataAccess()
 	 */
-	public function createElectoralCoalitionDataAccess() {
-		return new MongoDBElectoralCoalitionDataAccess();
+	public function createElectoralCoalitionDataAccess(MongoDBConnection $mongo) {
+		return new MongoDBElectoralCoalitionDataAccess($mongo);
 	}
 
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.AbstractDataAccessFactory::createPoliticalOrganizationDataAccess()
 	 */
-	public function createPoliticalOrganizationDataAccess() {
-		return new MongoDBPoliticalOrganizationDataAccess();
+	public function createPoliticalOrganizationDataAccess(MongoDBConnection $mongo) {
+		return new MongoDBPoliticalOrganizationDataAccess($mongo);
 	}
 
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.AbstractDataAccessFactory::createPoliticianDataAccess()
 	 */
-	public function createPoliticianDataAccess() {
-		return new MongoDBPoliticianDataAccess();
+	public function createPoliticianDataAccess(MongoDBConnection $mongo) {
+		return new MongoDBPoliticianDataAccess($mongo);
 	}
 
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.AbstractDataAccessFactory::createSessionDataAccess()
 	 */
-	public function createSessionDataAccess() {
-		return new MongoDBSessionDataAccess();
+	public function createSessionDataAccess(MongoDBConnection $mongo) {
+		return new MongoDBSessionDataAccess($mongo);
 	}
 }
