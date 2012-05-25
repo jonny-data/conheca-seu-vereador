@@ -1,0 +1,98 @@
+.no-underline a {
+	text-decoration: none;
+	
+}
+
+div.subnav {
+	height: 50px;
+}
+
+div.subnav .form-search {
+	margin: 15px 30px 0 10px; 
+}
+
+.nav-tabs > li > a, .nav-pills > li > a {
+	line-height: 28px;
+}
+
+.navbar .nav > li > a.gold {
+	color: #ff751a;
+	font-weight: bold;
+}
+
+.box-vereador {
+	width: 330px;
+	min-height: 300px;
+	padding: 10px;
+	float: left;
+	margin-right: 26px;
+	margin-bottom: 70px;
+	-webkit-box-shadow: 0px 0px 10px 3px #ccc;
+	box-shadow: 0px 0px 10px 3px #ccc;
+	
+	/**CSS#*/
+	
+	background: rgb(226,226,226); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(226,226,226,1) 3%, rgba(255,255,255,1) 18%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,rgba(226,226,226,1)), color-stop(18%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(226,226,226,1) 3%,rgba(255,255,255,1) 18%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(226,226,226,1) 3%,rgba(255,255,255,1) 18%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(226,226,226,1) 3%,rgba(255,255,255,1) 18%); /* IE10+ */
+	background: linear-gradient(top,  rgba(226,226,226,1) 3%,rgba(255,255,255,1) 18%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+.box-vereador .thumbnail {
+	width: 150px;
+	float: left;
+	margin-right: 10px;
+	
+}
+
+.box-vereador .orange_box {
+	background-color: #ffb17d;
+	margin-left: -10px;
+	width: 350px;
+	line-height: 40px;
+	text-align: center;
+}
+
+.box-vereador .head {
+	margin-top: -10px;
+	margin-bottom: 10px;
+	line-height: 40px;
+	height: 40px;
+	border-top: 1px solid #d05300;
+	border-bottom: 2px solid #fff;
+	background-color: #ff751a;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.box-vereador .head h3 {
+	line-height: 40px;
+	color: #fff;
+}
+
+.box-vereador .util {
+	margin-bottom: -10px;
+	-webkit-border-bottom-right-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	
+	-moz-border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.box-vereador .util a {
+	margin-right: 8px;
+}
