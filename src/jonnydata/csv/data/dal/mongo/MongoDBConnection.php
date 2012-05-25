@@ -7,11 +7,48 @@
 namespace jonnydata\csv\data\dal\mongo;
 
 use \Mongo;
+use \MongoId;
 
 class MongoDBConnection {
-	public function __construct($db = 'conhecaseupolitico', $collection = 'user') {
+	public $connection;
+	protected $db;
+
+	public function __construct($db = 'conhecaseupolitico') {
 		$this->connection = new Mongo();
-		$this->db = $db;
-		$this->collection = $this->connection->selectCollection($this->db, $collection);
+		$this->db = $this->connection->selectDB($db);
+	}
+
+	public function insert($collection, $data, $options = array()) {
+		return $this->db->selectCollection($collection)->insert($data, $options);
+	}
+
+	public function findOne($collection, $criteria = array(), $fields = array()) {
+		return $this->db->selectCollection($collection)->findOne($this->criteria($criteria), $fields);
+	}
+
+	public function find($collection, $criteria = array(), $fields = array()) {
+		return $this->db->selectCollection($collection)->find($this->criteria($criteria), $fields);
+	}
+
+	public function findAll($collection) {
+		return $this->db->selectCollection($collection)->find();
+	}
+
+	public function update($collection, $criteria, $data, $options = array('upsert' => false, 'multiple' => true)) {
+		return $this->db->selectCollection($collection)->update($this->criteria($criteria), array('$set' => $data), $options);
+	}
+
+	public function remove($collection, $criteria, $options = array()) {
+		return $this->db->selectCollection($collection)->remove($this->criteria($criteria), $options);
+	}
+
+	protected function criteria($criteria) {
+		if (is_a($criteria, 'MongoId')) {
+			return array('_id' => $criteria);
+		}
+		if (is_string($criteria)) {
+			return array('_id' => new MongoId($criteria));
+		}
+		return $criteria;
 	}
 }
