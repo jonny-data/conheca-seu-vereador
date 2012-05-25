@@ -141,6 +141,30 @@ class HTTPConnection {
 
 		throw new InvalidArgumentException('Name and value MUST be scalar');
 	}
+	
+	/**
+	 * Limpa os campos de cabeçalho e de requisição definidos anteriormente.
+	 * @see HTTPConnection::clearHeaders()
+	 * @see HTTPConnection::clearParameters()
+	 */
+	public function clear() {
+		$this->clearHeaders();
+		$this->clearParameters();
+	}
+	
+	/**
+	 * Limpa os campos de cabeçalhos definidos anteriormente.
+	 */
+	public function clearHeaders() {
+		$this->requestHeader = array();
+	}
+	
+	/**
+	 * Limpa os campos definidos anteriormente.
+	 */
+	public function clearParameters() {
+		$this->requestParameter = array();
+	}
 
 	/**
 	 * Fecha a conexão.
@@ -155,7 +179,7 @@ class HTTPConnection {
 	 * método específico.
 	 * @param	string $path Caminho da requisição.
 	 * @param	string $method Método da requisição.
-	 * @return	HTTPResponse Resposta HTTP.
+	 * @return	jonnydata\http\HTTPResponse Resposta HTTP.
 	 * @throws	BadMethodCallException Se não houver uma conexão inicializada ou
 	 * 			se o objeto de requisição não for válido.
 	 */
@@ -252,7 +276,7 @@ class HTTPConnection {
 
 	/**
 	 * Recupera o gerenciador de Cookies.
-	 * @return	CookieManager
+	 * @return	jonnydata\http\CookieManager
 	 */
 	public function getCookieManager() {
 		return $this->cookieManager;
@@ -370,7 +394,7 @@ class HTTPConnection {
 
 	/**
 	 * Cria uma instância de um objeto de requisição HTTP.
-	 * @return	HTTPRequest
+	 * @return	jonnydata\http\HTTPRequest
 	 */
 	public function newRequest() {
 		return new CURL();
