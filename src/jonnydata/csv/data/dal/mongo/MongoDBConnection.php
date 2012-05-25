@@ -14,12 +14,25 @@ class MongoDBConnection {
 	protected $db;
 
 	public function __construct($db = 'conhecaseupolitico') {
-		$this->connection = new Mongo();
+		$this->connection = new \Mongo();
 		$this->db = $this->connection->selectDB($db);
 	}
-
+        
+        public function object_to_array($obj) {
+                $_arr = is_object($obj) ? get_object_vars($obj) : $obj;
+                foreach ($_arr as $key => $val) {                        
+                        $val = (is_array($val) || is_object($val)) ? $this->object_to_array($val) : $val;
+                        $arr[$key] = $val;
+                        var_dump($key);
+                }
+                return $arr;
+        }
+        
 	public function insert($collection, $data, $options = array()) {
 		return $this->db->selectCollection($collection)->insert($data, $options);
+	}
+	public function save($collection, $data, $options = array()) {
+		return $this->db->selectCollection($collection)->save($data, $options);
 	}
 
 	public function findOne($collection, $criteria = array(), $fields = array()) {
