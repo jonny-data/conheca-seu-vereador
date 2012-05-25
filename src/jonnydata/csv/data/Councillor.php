@@ -6,7 +6,6 @@
 namespace jonnydata\csv\data;
 
 use \ArrayIterator;
-
 /**
  * Representação de um vereador.
  */
