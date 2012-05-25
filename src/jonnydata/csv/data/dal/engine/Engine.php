@@ -44,8 +44,9 @@ class Engine {
 			foreach ($politicalOrganizationDataAccess->findAll() as $politicalOrganization) {
 				foreach ($politicalOrganization->getPoliticianIterator() as $politician) {
 					$httpConnection->setParam('message',
-											   $politician->getName()."\n".
-											   $politician->getBio()."\n".
+											   $politician->getName().' - '.
+											   $politicalOrganization->getName()."\n\n".
+											   $politician->getBio()."\n\n".
 											   $politician->getURL());
 
 					//$httpConnection->setParam('source',$politician->getURL());
