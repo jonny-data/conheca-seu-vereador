@@ -21,6 +21,11 @@ class Councillor extends Politician {
 	private $politicalParty;
 	
 	/**
+	 * @var string
+	 */
+	private $url;
+	
+	/**
 	 * Adiciona um projeto elaborado pelo vereador.
 	 * @param Bill $bill
 	 */
@@ -42,11 +47,25 @@ class Councillor extends Politician {
 	public function getPoliticalParty() {
 		return $this->politicalParty;
 	}
+	
+	/**
+	 * @return string
+	 */
+	public function getURL() {
+		return $this->url;
+	}
 
 	/**
 	 * @param PoliticalParty $politicalParty
 	 */
-	public function setPoliticalParty($politicalParty) {
+	public function setPoliticalParty(PoliticalParty $politicalParty) {
 		$this->politicalParty = $politicalParty;
+	}
+	
+	/**
+	 * @param string $url
+	 */
+	public function setURL($url) {
+		$this->url = $url;
 	}
 }

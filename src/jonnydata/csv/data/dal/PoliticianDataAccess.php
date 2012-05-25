@@ -14,20 +14,20 @@ abstract class PoliticianDataAccess {
 	/**
 	 * Encontra os políticos segundo um critério.
 	 * @param array $criteria
-	 * @return array[Politician]
+	 * @return array[jonnydata\csv\data\Politician]
 	 */
 	public abstract function find(array $criteria);
 	
 	/**
 	 * Encontra uma político segundo um critério.
 	 * @param array $criteria
-	 * @return Politician
+	 * @return jonnydata\csv\data\Politician
 	 */
 	public abstract function findOne(array $criteria);
 	
 	/**
 	 * Encontra todas as políticos.
-	 * @return array[Politician]
+	 * @return array[jonnydata\csv\data\Politician]
 	 */
 	public abstract function findAll();
 	
