@@ -125,4 +125,5 @@ abstract class Politician {
 	public function setPhoto($photo) {
 		$this->photo = $photo;
 	}
+        
 }
