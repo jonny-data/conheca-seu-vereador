@@ -54,7 +54,7 @@ class MongoDBSessionDataAccess extends SessionDataAccess {
 	 */
 	public function save(Session $session) {
 		// TODO Auto-generated method stub
-		return $this->mongo->collection->save($bill);
+		return $this->mongo->collection->save($session);
 		
 	}
 
@@ -66,7 +66,7 @@ class MongoDBSessionDataAccess extends SessionDataAccess {
         $multiple = true;
         $upsert = false;
         $options = array("multiple" => $multiple, "upsert" => $upsert);
-		return $this->mongo->collection->save($criteria, $bill, $options);
+		return $this->mongo->collection->save($criteria, $session, $options);
 		
 	}
 }

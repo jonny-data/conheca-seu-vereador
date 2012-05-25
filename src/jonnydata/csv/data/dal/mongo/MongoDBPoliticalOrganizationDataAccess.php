@@ -67,7 +67,7 @@ class MongoDBPoliticalOrganizationDataAccess extends PoliticalOrganizationDataAc
         $multiple = true;
         $upsert = false;
         $options = array("multiple" => $multiple, "upsert" => $upsert);
-		return $this->mongo->collection->save($criteria, $bill, $options);
+		return $this->mongo->collection->save($criteria, $politicalOrganization, $options);
 		
 	}
 }

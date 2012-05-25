@@ -47,7 +47,15 @@ class MongoDBPoliticianDataAccess extends PoliticianDataAccess {
 	 * @see jonnydata\csv\data\dal.PoliticianDataAccess::save()
 	 */
 	public function save(Politician $politician) {
-		$this->connection->save('politics', $politician->toJSON());
+                $arr = array();
+                $data = (array) $politician;
+                $search = "jonnydata\csv\data\\";
+                foreach ($data as $key => $val) {
+                    $key = str_replace($search, "", $key);
+                    $arr[$key] = $val;
+                }
+                var_dump($arr);
+		$this->connection->save('politics', $arr);
 	}
 
 	/* (non-PHPdoc)
