@@ -23,3 +23,5 @@ spl_autoload_register(
 );
 
 include '../src/jonnydata/config.php';
+
+error_reporting(E_ALL);
