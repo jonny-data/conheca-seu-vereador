@@ -9,51 +9,64 @@ use jonnydata\csv\data\ElectoralCoalition;
 use jonnydata\csv\data\dal\ElectoralCoalitionDataAccess;
 
 class MongoDBElectoralCoalitionDataAccess extends ElectoralCoalitionDataAccess {
+    
+    public function __construct(MongoDBConnection $mongo) {
+        $this->mongo = $mongo;
+    }
+    
 	/* (non-PHPdoc)
 	 * @see jonnydata\csv\data\dal.ElectoralCoalitionDataAccess::find()
 	 */
 	public function find(array $criteria) {
 		// TODO Auto-generated method stub
-		
+		return $this->mongo->collection->find($criteria);
 	}
 
 	/* (non-PHPdoc)
-	 * @see jonnydata\csv\data\dal.ElectoralCoalitionDataAccess::findAll()
+	 * @see jonnydata\csv\data\dal.BillDataAccess::findAll()
 	 */
 	public function findAll() {
 		// TODO Auto-generated method stub
+		return $this->mongo->collection->find();
 		
 	}
 
 	/* (non-PHPdoc)
-	 * @see jonnydata\csv\data\dal.ElectoralCoalitionDataAccess::findOne()
+	 * @see jonnydata\csv\data\dal.BillDataAccess::findOne()
 	 */
 	public function findOne(array $criteria) {
 		// TODO Auto-generated method stub
+		return $this->mongo->collection->findOne($criteria);
 		
 	}
 
 	/* (non-PHPdoc)
-	 * @see jonnydata\csv\data\dal.ElectoralCoalitionDataAccess::remove()
+	 * @see jonnydata\csv\data\dal.BillDataAccess::remove()
 	 */
 	public function remove(array $criteria) {
 		// TODO Auto-generated method stub
+		return $this->mongo->collection->remove($criteria, true);
 		
 	}
 
 	/* (non-PHPdoc)
-	 * @see jonnydata\csv\data\dal.ElectoralCoalitionDataAccess::save()
+	 * @see jonnydata\csv\data\dal.BillDataAccess::save()
 	 */
-	public function save(ElectoralCoalition $electoralCoalition) {
+	public function save(Bill $bill) {
 		// TODO Auto-generated method stub
+		return $this->mongo->collection->save($bill);
 		
 	}
 
 	/* (non-PHPdoc)
-	 * @see jonnydata\csv\data\dal.ElectoralCoalitionDataAccess::update()
+	 * @see jonnydata\csv\data\dal.BillDataAccess::update()
 	 */
-	public function update(ElectoralCoalition $electoralCoalition, array $criteria) {
+	public function update(Bill $bill, array $criteria) {
 		// TODO Auto-generated method stub
+        $multiple = true;
+        $upsert = false;
+        $options = array("multiple" => $multiple, "upsert" => $upsert);
+		return $this->mongo->collection->save($criteria, $bill, $options);
 		
 	}
 }
