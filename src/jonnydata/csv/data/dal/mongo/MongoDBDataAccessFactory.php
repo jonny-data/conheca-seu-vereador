@@ -12,7 +12,7 @@ use jonnydata\csv\data\dal\AbstractDataAccessFactory;
  * Fábrica de objetos de acesso a dados em base MongoDB.
  */
 class MongoDBDataAccessFactory extends AbstractDataAccessFactory {
-	static protected $connection;
+	protected $connection;
 
 	public function __construct(MongoDBConnection $connection = null) {
 		$this->connection = $connection;
