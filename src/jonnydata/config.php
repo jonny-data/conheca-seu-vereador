@@ -15,7 +15,10 @@ ini_set('include_path', implode(PATH_SEPARATOR, array_unique(
 
 //registra a função autoload
 spl_autoload_register(function($class) {
-	$classPath = implode(DIRECTORY_SEPARATOR,explode('\\', $class)).'.php';
+	$classPath = stream_resolve_include_path(
+		implode(DIRECTORY_SEPARATOR,explode('\\', $class)).'.php'
+	);
+	
 	if (file_exists($classPath)) {
 		require $classPath;
 	}
