@@ -74,7 +74,9 @@ class EnginePoliticalOrganizationDataAccess extends PoliticalOrganizationDataAcc
 						$criteria = $this->engineRequester->parseParameters($href);
 						$politician = $this->politicianDataAccess->findOne($criteria);
 						$politician->setPoliticalParty($politicalOrganization);
-						$politician->setURL('http://'.$this->engineRequester->getHostURL().$href);
+						
+						//FIXME: Corrigir a URL do vereador
+						$politician->setURL('http://www1.camara.sp.gov.br/'.$href);
 						
 						if (!empty($name)) {
 							$politicalOrganizations[$politicalOrganizationName]->addPolitician($politician);
