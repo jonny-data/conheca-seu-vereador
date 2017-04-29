@@ -1,4 +1,4 @@
-#Desafio de Dados Abertos da Câmara Municipal de São Paulo
+# Desafio de Dados Abertos da Câmara Municipal de São Paulo
 
 Olá pessoal,
 
@@ -21,7 +21,7 @@ Espero que curtam muito!
 Abraços,
 Equipe Jonny Data
 
-##=== Equipe Jonny Data ===
+## === Equipe Jonny Data ===
 ### Integrantes: 
 * Jean Carlo Nascimento
 * João Batista Neto
